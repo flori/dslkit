@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Module: DSLKit::Deflect</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="module">
+
+	<div id="metadata">
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../lib/dslkit/polite_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/dslkit/polite.rb">lib/dslkit/polite.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+
+			<!-- Namespace Contents -->
+			
+			<div id="namespace-list-section" class="section">
+				<h3 class="section-header">Namespace</h3>
+				<ul class="link-list">
+					
+					<li><span class="type">CLASS</span> <a href="Deflect/DeflectError.html">DSLKit::Deflect::DeflectError</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Deflect/Deflector.html">DSLKit::Deflect::Deflector</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Deflect/DeflectorCollection.html">DSLKit::Deflect::DeflectorCollection</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#M000026">::deflect?</a></li>
+					
+					<li><a href="#M000028">#deflect</a></li>
+					
+					<li><a href="#M000027">#deflect?</a></li>
+					
+					<li><a href="#M000025">#deflect_start</a></li>
+					
+					<li><a href="#M000029">#deflect_stop</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../doc-main_txt.html">doc-main.txt</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../DSLKit.html">DSLKit</a></li>
+				
+					<li><a href="../DSLKit/BlankSlate.html">DSLKit::BlankSlate</a></li>
+				
+					<li><a href="../DSLKit/BlockSelf.html">DSLKit::BlockSelf</a></li>
+				
+					<li><a href="../DSLKit/ClassMethod.html">DSLKit::ClassMethod</a></li>
+				
+					<li><a href="../DSLKit/Constant.html">DSLKit::Constant</a></li>
+				
+					<li><a href="../DSLKit/ConstantMaker.html">DSLKit::ConstantMaker</a></li>
+				
+					<li><a href="../DSLKit/DSLAccessor.html">DSLKit::DSLAccessor</a></li>
+				
+					<li><a href="../DSLKit/Deflect.html">DSLKit::Deflect</a></li>
+				
+					<li><a href="../DSLKit/Deflect/DeflectError.html">DSLKit::Deflect::DeflectError</a></li>
+				
+					<li><a href="../DSLKit/Deflect/Deflector.html">DSLKit::Deflect::Deflector</a></li>
+				
+					<li><a href="../DSLKit/Deflect/DeflectorCollection.html">DSLKit::Deflect::DeflectorCollection</a></li>
+				
+					<li><a href="../DSLKit/Delegate.html">DSLKit::Delegate</a></li>
+				
+					<li><a href="../DSLKit/Eigenclass.html">DSLKit::Eigenclass</a></li>
+				
+					<li><a href="../DSLKit/InstanceExec.html">DSLKit::InstanceExec</a></li>
+				
+					<li><a href="../DSLKit/Interpreter.html">DSLKit::Interpreter</a></li>
+				
+					<li><a href="../DSLKit/MethodMissingDelegator.html">DSLKit::MethodMissingDelegator</a></li>
+				
+					<li><a href="../DSLKit/MethodMissingDelegator/DelegatorClass.html">DSLKit::MethodMissingDelegator::DelegatorClass</a></li>
+				
+					<li><a href="../DSLKit/MethodMissingDelegator/DelegatorModule.html">DSLKit::MethodMissingDelegator::DelegatorModule</a></li>
+				
+					<li><a href="../DSLKit/SymbolMaker.html">DSLKit::SymbolMaker</a></li>
+				
+					<li><a href="../DSLKit/ThreadGlobal.html">DSLKit::ThreadGlobal</a></li>
+				
+					<li><a href="../DSLKit/ThreadLocal.html">DSLKit::ThreadLocal</a></li>
+				
+					<li><a href="../Module.html">Module</a></li>
+				
+					<li><a href="../Object.html">Object</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="module">DSLKit::Deflect</h1>
+
+		<div id="description">
+			<p>
+See examples/recipe.rb and examples/recipe2.rb how this works at the
+moment.
+</p>
+
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="deflect--method" class="method-detail ">
+				<a name="M000026"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">deflect?</span><span
+						class="method-args">(from, id)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Return true if method <em>id</em> is deflected from class <em>from</em>,
+otherwise return false.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="deflect--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/dslkit/polite.rb, line 474</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">deflect?</span>(<span class="ruby-identifier">from</span>, <span class="ruby-identifier">id</span>)
+      <span class="ruby-constant">Deflect</span>.<span class="ruby-identifier">deflecting</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">Deflect</span>.<span class="ruby-identifier">deflecting</span>.<span class="ruby-identifier">member?</span>(<span class="ruby-identifier">from</span>, <span class="ruby-identifier">id</span>)
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="deflect-method" class="method-detail ">
+				<a name="M000028"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">deflect</span><span
+						class="method-args">(from, id, deflector)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Start deflecting method calls named <em>id</em> to the <em>from</em> class
+using the <a href="Deflect/Deflector.html">Deflector</a> instance
+deflector. After that yield to the given block and stop deflecting again.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="deflect-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/dslkit/polite.rb, line 487</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">deflect</span>(<span class="ruby-identifier">from</span>, <span class="ruby-identifier">id</span>, <span class="ruby-identifier">deflector</span>)
+      <span class="ruby-ivar">@@sync</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword kw">do</span>
+        <span class="ruby-keyword kw">begin</span>
+          <span class="ruby-identifier">deflect_start</span>(<span class="ruby-identifier">from</span>, <span class="ruby-identifier">id</span>, <span class="ruby-identifier">deflector</span>)
+          <span class="ruby-keyword kw">yield</span>
+        <span class="ruby-keyword kw">ensure</span>
+          <span class="ruby-identifier">deflect_stop</span>(<span class="ruby-identifier">from</span>, <span class="ruby-identifier">id</span>)
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="deflect--method" class="method-detail ">
+				<a name="M000027"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">deflect?</span><span
+						class="method-args">(from, id)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Return true if method <em>id</em> is deflected from class <em>from</em>,
+otherwise return false.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="deflect--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/dslkit/polite.rb, line 480</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">deflect?</span>(<span class="ruby-identifier">from</span>, <span class="ruby-identifier">id</span>)
+      <span class="ruby-constant">Deflect</span>.<span class="ruby-identifier">deflect?</span>(<span class="ruby-identifier">from</span>, <span class="ruby-identifier">id</span>)
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="deflect-start-method" class="method-detail ">
+				<a name="M000025"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">deflect_start</span><span
+						class="method-args">(from, id, deflector)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Start deflecting method calls named <em>id</em> to the <em>from</em> class
+using the <a href="Deflect/Deflector.html">Deflector</a> instance
+deflector.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="deflect-start-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/dslkit/polite.rb, line 454</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">deflect_start</span>(<span class="ruby-identifier">from</span>, <span class="ruby-identifier">id</span>, <span class="ruby-identifier">deflector</span>)
+      <span class="ruby-ivar">@@sync</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword kw">do</span>
+        <span class="ruby-constant">Deflect</span>.<span class="ruby-identifier">deflecting</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">DeflectorCollection</span>.<span class="ruby-identifier">new</span>
+        <span class="ruby-constant">Deflect</span>.<span class="ruby-identifier">deflecting</span>.<span class="ruby-identifier">member?</span>(<span class="ruby-identifier">from</span>, <span class="ruby-identifier">id</span>) <span class="ruby-keyword kw">and</span>
+          <span class="ruby-identifier">raise</span> <span class="ruby-constant">DeflectError</span>, <span class="ruby-node">&quot;#{from}##{id} is already deflected&quot;</span>
+        <span class="ruby-constant">Deflect</span>.<span class="ruby-identifier">deflecting</span>.<span class="ruby-identifier">add</span>(<span class="ruby-identifier">from</span>, <span class="ruby-identifier">id</span>, <span class="ruby-identifier">deflector</span>)
+        <span class="ruby-identifier">from</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-keyword kw">do</span>
+          <span class="ruby-identifier">define_method</span>(<span class="ruby-identifier">id</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-operator">*</span><span class="ruby-identifier">args</span><span class="ruby-operator">|</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Deflect</span>.<span class="ruby-identifier">deflecting</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">d</span> = <span class="ruby-constant">Deflect</span>.<span class="ruby-identifier">deflecting</span>.<span class="ruby-identifier">find</span>(<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>, <span class="ruby-identifier">id</span>)
+              <span class="ruby-identifier">d</span>.<span class="ruby-identifier">call</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">id</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+            <span class="ruby-keyword kw">else</span>
+              <span class="ruby-keyword kw">super</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+            <span class="ruby-keyword kw">end</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="deflect-stop-method" class="method-detail ">
+				<a name="M000029"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">deflect_stop</span><span
+						class="method-args">(from, id)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Stop deflection method calls named <em>id</em> to class <em>from</em>.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="deflect-stop-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/dslkit/polite.rb, line 499</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">deflect_stop</span>(<span class="ruby-identifier">from</span>, <span class="ruby-identifier">id</span>)
+      <span class="ruby-ivar">@@sync</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword kw">do</span>
+        <span class="ruby-constant">Deflect</span>.<span class="ruby-identifier">deflecting</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">from</span>, <span class="ruby-identifier">id</span>) <span class="ruby-keyword kw">or</span>
+          <span class="ruby-identifier">raise</span> <span class="ruby-constant">DeflectError</span>, <span class="ruby-node">&quot;#{from}##{id} is not deflected from&quot;</span>
+        <span class="ruby-identifier">from</span>.<span class="ruby-identifier">instance_eval</span> { <span class="ruby-identifier">remove_method</span> <span class="ruby-identifier">id</span> }
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

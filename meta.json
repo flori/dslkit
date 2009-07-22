@@ -1,0 +1,11 @@
+{
+  "author":"Florian Frank",
+  "author_email":"flori@ping.de",
+  "documentation_url":"doc\/index.html",
+  "download_url":"http:\/\/rubyforge.org\/frs\/?group_id=2248",
+  "github_url": "http:\/\/github.com\/flori\/dslkit\/tree\/master",
+  "homepage_url":"http:\/\/dslkit.rubyforge.org",
+  "project_name":"DSL Kit",
+  "project_unixname":"dslkit",
+  "project_url":"http:\/\/rubyforge.org\/projects\/dslkit"
+}

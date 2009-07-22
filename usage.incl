@@ -1,0 +1,17 @@
+<h2>Usage</h2>
+<p>
+There are two ways to use DSLKit:
+</p>
+<ul>
+<li>You can <tt>require 'dslkit/polite'</tt> in order to include/extend your
+classes yourself. This is the default in order to avoid cluttering the core
+namespaces with unwanted methods.</li>
+<li>Alternatively you can <tt>require 'dslkit/rude'</tt>, that will clutter the
+namespaces with <i>reasonable</i> inclusions/extensions. Some inclusions like
+DSLKit::SymbolMaker would make debugging typos pretty difficult, so they aren't
+included, even in the rude modus.</li>
+</ul>
+<p>
+To get some ideas what's possible, check out the files in the <tt>examples</tt>
+subdirectory of the source distribution/gem installation directory.
+</p>

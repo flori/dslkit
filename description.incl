@@ -1,0 +1,5 @@
+<h2>Description</h2>
+<p>
+This library contains recurring patterns, that are useful in the creation of
+internal Domain Specific Languages (DSL) in Ruby.
+</p>

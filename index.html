@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html 
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <title>DSL Kit</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  </head>
+  <body>
+
+    <ul id="linkbox">
+      <li><a href="http://dslkit.rubyforge.org/index.html">Homepage</a></li>
+      <li><a href="http://github.com/flori/dslkit/tree/master">Github Repository</a></li>
+      <li><a href="http://rubyforge.org/projects/dslkit">Rubyforge Project</a></li>
+      <li><a href="http://rubyforge.org/frs/?group_id=2248">Download</a></li>
+      <li><a href="doc/index.html">Documentation</a></li>
+      
+    </ul>
+
+    <div id="content">
+      <h1>dslkit &ndash; DSL Kit</h1>
+
+<h2>Description</h2>
+<p>
+This library contains recurring patterns, that are useful in the creation of
+internal Domain Specific Languages (DSL) in Ruby.
+</p>
+
+<h2>Installation</h2>
+<p>
+The library can be installed via rubygems:
+</p>
+<pre>
+# gem install dslkit
+</pre>
+<p>
+The gem and the source archive can also be <a
+href="http://rubyforge.org/frs/?group_id=2248">downloaded</a> directly from rubyforge.org.
+</p>
+
+<h2>Usage</h2>
+<p>
+There are two ways to use DSLKit:
+</p>
+<ul>
+<li>You can <tt>require 'dslkit/polite'</tt> in order to include/extend your
+classes yourself. This is the default in order to avoid cluttering the core
+namespaces with unwanted methods.</li>
+<li>Alternatively you can <tt>require 'dslkit/rude'</tt>, that will clutter the
+namespaces with <i>reasonable</i> inclusions/extensions. Some inclusions like
+DSLKit::SymbolMaker would make debugging typos pretty difficult, so they aren't
+included, even in the rude modus.</li>
+</ul>
+<p>
+To get some ideas what's possible, check out the files in the <tt>examples</tt>
+subdirectory of the source distribution/gem installation directory.
+</p>
+
+      <h2>Author</h2>
+      Florian Frank &lt;<a href="mailto:flori@ping.de">flori@ping.de</a>&gt;
+
+<h2>License</h2>
+<p>
+This is free software; you can redistribute it and/or modify it under the terms
+of the GNU General Public License Version 2 as published by the Free Software
+Foundation: <a href="http://www.gnu.org/copyleft/gpl.html">GNU GPL</a>.
+</p>
+
+    </div>
+    <p class="valid">
+      <a href="http://validator.w3.org/check?uri=referer"><img
+        src="http://www.w3.org/Icons/valid-xhtml10"
+        alt="Valid XHTML 1.0 Transitional" height="31" width="88" /></a>
+    </p>
+  </body>
+</html>
+
