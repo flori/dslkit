@@ -1,0 +1,31 @@
+== DSLKit - Building Blocks for Domain Specific Languages (DSL)
+
+=== Description
+
+This library contains recurring patterns, that are useful in the creation of
+internal Domain Specific Languages (DSL) in Ruby.
+
+=== Author
+
+Florian Frank <mailto:flori@ping.de>
+
+=== License 
+
+This is free software; you can redistribute it and/or modify it under the
+terms of the GNU General Public License Version 2 as published by the Free
+Software Foundation: www.gnu.org/copyleft/gpl.html
+
+=== Download
+
+The latest version of this library can be downloaded at
+
+* http://rubyforge.org/frs?group_id=2248
+
+Online Documentation should be located at
+
+* http://dslkit.rubyforge.org
+
+=== Examples
+
+Some nice examples on how to use dslkit are located in the examples/
+subdirectory of this library.

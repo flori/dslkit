@@ -1,0 +1,19 @@
+2009-07-20 (0.2.6)
+  * Build gemspec file.
+  * Some cleanup.
+2008-12-01 (0.2.5)
+  * Added shorter call to constant method.
+2008-02-22 (0.2.4)
+  * Fixed bug: use @@mutex instead of @mutex in cleanup handler, duh.
+2007-11-29 (0.2.3)
+  * Now compatible to Ruby 1.9 (for the moment).
+2007-04-11 (0.2.2)
+  * Ported Reginald Braithwaite's let DSL to DSLKit as examples/let.rb, see
+    http://weblog.raganwald.com/2007/03/approach-to-composing-domain-specific.html.
+    Added BlockSelf and MethodMissingDelegator modules for the implementation.
+  * Added version.rb.
+2007-02-22 (0.2.1)
+  * Add coverage to tests.
+  * New delegate method for classes/modules.
+2006-09-22 (0.2.0)
+  * Initial Released Version
