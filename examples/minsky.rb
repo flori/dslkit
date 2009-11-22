@@ -3,7 +3,7 @@
 require 'dslkit/polite'
 
 # A small Minsky (register) machine
-module MM
+module Minsky
   class InterpreterError < StandardError; end
 
   class ::Proc
@@ -136,9 +136,9 @@ end
 
 if $0 == __FILE__
   if ARGV.empty?
-    MM::Interpreter.new(STDIN.read).run
+    Minsky::Interpreter.new(STDIN.read).run
   else
-    interpreter = MM::Interpreter.new(File.read(ARGV.shift))
+    interpreter = Minsky::Interpreter.new(File.read(ARGV.shift))
     interpreter.stepping = !ARGV.empty?
     interpreter.run
   end
