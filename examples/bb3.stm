@@ -1,0 +1,26 @@
+# vim: ts=2 sw=2 et ft=ruby
+# Call with an empty tape
+# $ turing.rb bb3.stm ''
+
+# Busy Beaver: 3-state, 2-symbol
+
+# state A
+ 1. cond  :if => 'B', :then => 2, :else => 5
+ 2. write :symbol => '1', :goto => 3 
+ 3. right :goto => 8
+ 5. write :symbol => '1', :goto => 6
+ 6. right :goto => 22
+# state B
+ 8. cond  :if => 'B', :then => 9, :else => 12
+ 9. write :symbol => 'B', :goto => 10
+10. right :goto => 15
+12. write :symbol => '1', :goto => 13
+13. right :goto => 8
+# state C
+15. cond  :if => 'B', :then => 16, :else => 19
+16. write :symbol => '1', :goto => 17
+17. left  :goto => 15
+19. write :symbol => '1', :goto => 20
+20. left  :goto => 1
+# halt
+22. halt
