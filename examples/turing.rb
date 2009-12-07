@@ -77,6 +77,13 @@ module Turing
       def to_s
         "if #@if then #@then else #@else"
       end
+
+      def to_graphviz(stateno, tapeno = nil)
+        %{#{stateno} [ shape=diamond label="#{tapeno && "#{tapeno}: "}#@if" ];
+          #{stateno} -> #@then [ taillabel="+" ];
+          #{stateno} -> #@else [ taillabel="-" ];
+          #{stateno} -> #{stateno} [ label="#{stateno}" weight=4.0 color=transparent ];}
+      end
     end
 
     class Left < State
@@ -91,6 +98,12 @@ module Turing
 
       def to_s
         "left, goto #@goto"
+      end
+
+      def to_graphviz(stateno, tapeno = nil)
+        %{#{stateno} [ shape=rect label="#{tapeno && "#{tapeno}: "}L" ];
+          #{stateno} -> #@goto;
+          #{stateno} -> #{stateno} [ label="#{stateno}" weight=4.0 color=transparent ];}
       end
     end
 
@@ -107,6 +120,12 @@ module Turing
       def to_s
         "right, goto #@goto"
       end
+
+      def to_graphviz(stateno, tapeno = nil)
+        %{#{stateno} [ shape=rect label="#{tapeno && "#{tapeno}: "}R" ];
+          #{stateno} -> #@goto;
+          #{stateno} -> #{stateno} [ label="#{stateno}" weight=4.0 color=transparent ];}
+      end
     end
 
     class Write < State
@@ -122,6 +141,12 @@ module Turing
       def to_s
         "write #@symbol, goto #@goto"
       end
+
+      def to_graphviz(stateno, tapeno = nil)
+        %{#{stateno} [ shape=rect label="#{tapeno && "#{tapeno}: "}#@symbol" ];
+          #{stateno} -> #@goto;
+          #{stateno} -> #{stateno} [ label="#{stateno}" weight=4.0 color=transparent ];}
+      end
     end
 
     class Halt < State
@@ -134,6 +159,11 @@ module Turing
 
       def to_s
         'halt'
+      end
+
+      def to_graphviz(stateno, tapeno = nil)
+        %{#{stateno} [ shape=rect label="HALT" ];
+          #{stateno} -> #{stateno} [ label="#{stateno}" weight=4.0 color=transparent ];}
       end
     end
   end
@@ -190,6 +220,21 @@ module Turing
       end
       result
     end
+
+    def to_graphviz
+      result = "digraph {\n"
+      start_edge = false
+      @states.each_with_index do |state, stateno|
+        state or next
+        unless start_edge
+          result << "start [ fontcolor=transparent color=transparent ];"
+          result << "start -> #{stateno};"
+          start_edge = true
+        end
+        result << state.to_graphviz(stateno) << "\n"
+      end
+      result << "}\n"
+    end
   end
 
   class MultiTapeMachine < BaseMachine
@@ -230,10 +275,25 @@ module Turing
       end
       result
     end
+
+    def to_graphviz
+      result = "digraph {\n"
+      start_edge = false
+      @states.each_with_index do |(tapeno,state), stateno|
+        state or next
+        unless start_edge
+          result << "start [ fontcolor=transparent color=transparent ];"
+          result << "start -> #{stateno};"
+          start_edge = true
+        end
+        result << state.to_graphviz(stateno, tapeno) << "\n"
+      end
+      result << "}\n"
+    end
   end
 end
 
-if ARGV.any?
+if $0 == __FILE__ and ARGV.any?
   include Turing
   filename, *tapes = ARGV
   machine_type =
