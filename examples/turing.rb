@@ -244,7 +244,7 @@ module Turing
     def initialize(program = nil)
       deflector = Deflector.new do |number, id, name, *args|
         opts = Hash === args.last ? args.pop : {}
-        tape = *args
+        tape, = *args
         state = States.const_get(name.to_s.capitalize).new(opts)
         @states[number] = [ tape, state ]
       end

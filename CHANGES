@@ -1,6 +1,5 @@
-2009-11-22 (0.2.8)
+2011-07-16 (0.2.7)
   * Added turing machines example.
-  * No more gemspec files.
 2009-07-20 (0.2.6)
   * Build gemspec file.
   * Some cleanup.

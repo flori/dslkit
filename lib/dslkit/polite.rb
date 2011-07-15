@@ -303,13 +303,15 @@ module DSLKit
         if args.empty?
           result = instance_variable_get(variable)
           if result.nil?
-            if default.empty?
+            result = if default.empty?
               block && instance_eval(&block)
             elsif default.size == 1
               default.first
             else
               default
             end
+            instance_variable_set(variable, result)
+            result
           else
             result
           end
