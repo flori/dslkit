@@ -10,7 +10,7 @@ module Minsky
     attr_accessor :interpreter
 
     attr_accessor :name
-    
+
     def execute
       interpreter.display_registers(self)
       call
@@ -70,7 +70,7 @@ module Minsky
     end
 
     def display_registers(label)
-      @format ||= "%#{@labels.map { |l| l.name.to_s.size }.max}s" 
+      @format ||= "%#{@labels.map { |l| l.name.to_s.size }.max}s"
       STDOUT.puts "#{@format % label.name}: #{@registers}"
       if @stepping
         STDOUT.print "? "
@@ -107,7 +107,7 @@ module Minsky
 
     def increment(register, label)
       label = label_fetch label
-      register_increment(register)  
+      register_increment(register)
       label
     end
 
@@ -117,8 +117,8 @@ module Minsky
       else_label = label_fetch else_label
       if register_value.zero?
         zero_label
-      else  
-        register_decrement(register)  
+      else
+        register_decrement(register)
         else_label
       end
     end

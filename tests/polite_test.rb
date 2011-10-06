@@ -52,7 +52,7 @@ class DA
 
   dsl_accessor :quux, :qu, :ux
 
-  dsl_reader :on, true 
+  dsl_reader :on, true
 
   dsl_reader :off, false
 
@@ -69,7 +69,7 @@ class I
   def foo
     :foo
   end
-  
+
   def y
     2
   end
@@ -108,7 +108,7 @@ end
 require 'test/unit'
 require 'tempfile'
 
-class TC_DSLKit < Test::Unit::TestCase
+class PoliteTest < Test::Unit::TestCase
   def setup
     @tl = TL.new
     @tl2 = TL.new

@@ -58,7 +58,7 @@ class Unit
   end
 
   attr_reader :n
-  
+
   def to_s
     "#@n #{name}#{@n > 1 ? 's' : ''}"
   end
@@ -90,7 +90,7 @@ class Unit
   end
 
   attr_reader :n
-  
+
   def to_s
     "#@n #{name}#{@n > 1 ? 's' : ''}"
   end

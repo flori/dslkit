@@ -56,7 +56,7 @@ module Turing
     def to_s
       "#{@left.join}#{Term::ANSIColor.red(@head)}#{@right.join.reverse}"
     end
-    
+
     alias inspect to_s
   end
 

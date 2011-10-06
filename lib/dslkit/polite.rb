@@ -63,7 +63,7 @@ module DSLKit
 
     # Define a thread local variable named _name_ in this module/class. If the
     # value _value_ is given, it is used to initialize the variable.
-    def thread_local(name, value = nil)
+    def thread_local(name, default_value = nil)
       is_a?(Module) or raise TypeError, "receiver has to be a Module"
 
       name = name.to_s
@@ -81,9 +81,9 @@ module DSLKit
         Thread.current[my_id][name] = value
       end
 
-      if value
+      if default_value
         Thread.current[my_id] = {}
-        Thread.current[my_id][name] = value
+        Thread.current[my_id][name] = default_value
       end
       self
     end
@@ -103,9 +103,9 @@ module DSLKit
   module ThreadGlobal
     # Define a thread global variable named _name_ in this module/class. If the
     # value _value_ is given, it is used to initialize the variable.
-    def thread_global(name, value = nil)
+    def thread_global(name, default_value = nil)
       is_a?(Module) or raise TypeError, "receiver has to be a Module"
-     
+
       name = name.to_s
       var_name = "@__#{name}_#{__id__.abs}__"
 
@@ -120,7 +120,7 @@ module DSLKit
         lock.synchronize { modul.instance_variable_set var_name, value }
       end
 
-      modul.instance_variable_set var_name, value if value
+      modul.instance_variable_set var_name, default_value if default_value
       self
     end
 
@@ -199,7 +199,7 @@ module DSLKit
     #      3
     #    end
     #  end
-    # 
+    #
     #  A.new.interpret('|a,b| a + b + c', 1, 2) # => 6
     #
     # To use a specified binding see #interpret_with_binding.
@@ -218,7 +218,7 @@ module DSLKit
     #      3
     #    end
     #    def foo
-    #      b = 2 
+    #      b = 2
     #      interpret_with_binding('|a| a + b + c', binding, 1) # => 6
     #    end
     #  end
@@ -243,7 +243,7 @@ module DSLKit
     # frozen, if this is possible. If you want to modify/exchange a value use
     # DSLAccessor#dsl_reader/DSLAccessor#dsl_accessor instead.
     def constant(name, value = name)
-      value = value.freeze rescue value 
+      value = value.freeze rescue value
       define_method(name) { value }
     end
   end
@@ -251,7 +251,7 @@ module DSLKit
   # The DSLAccessor module contains some methods, that can be used to make
   # simple accessors for a DSL.
   #
-  # 
+  #
   #  class CoffeeMaker
   #    extend DSLKit::Constant
   #
@@ -596,6 +596,20 @@ module DSLKit
       else
         super
       end
+    end
+  end
+
+  module FromModule
+    def from_module(modul, *import_methods)
+      result = modul.dup
+      remove_methods = modul.instance_methods.map(&:to_sym) - import_methods.map(&:to_sym)
+      remove_methods.each do |m|
+        begin
+          result.__send__ :remove_method, m
+        rescue NameError
+        end
+      end
+      result
     end
   end
 end

@@ -29,7 +29,7 @@ class Mail
 
   dsl_accessor :date      do Time.now.rfc2822 end
 
-  def message_id 
+  def message_id
     key = [ ENV['HOSTNAME'] || 'localhost', $$ , Time.now ].join
     (::Digest::MD5.new << key).to_s
   end

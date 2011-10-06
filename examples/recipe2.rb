@@ -61,7 +61,7 @@ end
 recipe_source = <<EOT
 pancakes = recipe do
   2.cups.         flour
-  2.5.teaspoons.  baking_powder 
+  2.5.teaspoons.  baking_powder
   0.5.teaspoon.   salt
   1.              egg
   1.5.cups.       milk
