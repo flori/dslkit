@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Florian Frank"]
-  s.date = "2011-10-06"
+  s.date = "2011-10-07"
   s.description = "This library contains recurring patterns, that are useful in the creation of internal Domain Specific Languages (DSL) in Ruby."
   s.email = "flori@ping.de"
   s.extra_rdoc_files = ["README.rdoc", "lib/dslkit/version.rb", "lib/dslkit/rude.rb", "lib/dslkit/polite.rb", "lib/dslkit.rb"]
