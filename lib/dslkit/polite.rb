@@ -599,8 +599,23 @@ module DSLKit
     end
   end
 
+  module ParameterizedModule
+    # Pass _args_ and _block_ to configure the module and then return it after
+    # calling the parameterize method has been called with these arguments. The
+    # _parameterize_ method should return a configured module.
+    def parameterize_for(*args, &block)
+      respond_to?(:parameterize) ? parameterize(*args, &block) : self
+    end
+  end
+
   module FromModule
-    def from_module(modul, *import_methods)
+    include ParameterizedModule
+
+    alias from parameterize_for
+
+    def parameterize(opts = {})
+      modul = opts[:module] or raise ArgumentError, 'option :module is required'
+      import_methods = Array(opts[:methods])
       result = modul.dup
       remove_methods = modul.instance_methods.map(&:to_sym) - import_methods.map(&:to_sym)
       remove_methods.each do |m|

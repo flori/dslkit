@@ -10,6 +10,7 @@ module DSLKit
     include DSLKit::DSLAccessor
     include DSLKit::ClassMethod
     include DSLKit::Delegate
+    include DSLKit::ParameterizedModule
     include DSLKit::FromModule
   end
 
