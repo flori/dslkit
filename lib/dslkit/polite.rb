@@ -627,4 +627,74 @@ module DSLKit
       result
     end
   end
+
+  module Scope
+    def scope_push(scope_frame, name = :default)
+      scope_get(name).push scope_frame
+      self
+    end
+
+    def scope_pop(name = :default)
+      scope_get(name).pop
+      scope_get(name).empty? and Thread.current[name] = nil
+      self
+    end
+
+    def scope_top(name = :default)
+      scope_get(name).last
+    end
+
+    def scope_reverse(name = :default, &block)
+      scope_get(name).reverse_each(&block)
+    end
+
+    def scope_block(scope_frame, name = :default)
+      scope_push(scope_frame, name)
+      yield
+      self
+    ensure
+      scope_pop(name)
+    end
+
+    def scope_get(name = :default)
+      Thread.current[name] ||= []
+    end
+
+    def scope(name = :default)
+      scope_get(name).dup
+    end
+  end
+
+  module DynamicScope
+    class Context < Hash
+      def [](name)
+        super name.to_sym
+      end
+
+      def []=(name, value)
+        super name.to_sym, value
+      end
+    end
+
+    include Scope
+
+    attr_accessor :dynamic_scope_name
+
+    def dynamic_scope(&block)
+      self.dynamic_scope_name ||= :variables
+      scope_block(Context.new, dynamic_scope_name, &block)
+    end
+
+    def method_missing(id, *args)
+      self.dynamic_scope_name ||= :variables
+      if args.empty? and scope_reverse(dynamic_scope_name) { |c| c.key?(id) and return c[id] }
+        super
+      elsif args.size == 1 and id.to_s =~ /(.*?)=\Z/
+        c = scope_top(dynamic_scope_name) or super
+        c[$1.to_sym] = args.first
+      else
+        super
+      end
+    end
+  end
 end
