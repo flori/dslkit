@@ -11,7 +11,7 @@ GemHadar do
   summary     'Kit for building DSLs in Ruby'
   description 'This library contains recurring patterns, that are useful in the creation of internal Domain Specific Languages (DSL) in Ruby.'
   test_dir    'tests'
-  ignore      '.*.sw[pon]', 'pkg', 'Gemfile.lock', '.rvmrc'
+  ignore      '.*.sw[pon]', 'pkg', 'Gemfile.lock', '.rvmrc', 'coverage'
   readme      'README.rdoc'
 
   dependency  'term-ansicolor', '~>1.0'
@@ -19,7 +19,7 @@ GemHadar do
 
   install_library do
     libdir = CONFIG["sitelibdir"]
-    cd 'lib' do 
+    cd 'lib' do
       dst = File.join(libdir, 'dslkit')
       mkdir_p dst
       cd 'dslkit' do

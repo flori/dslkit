@@ -6,7 +6,7 @@
 
 # state A
  1. cond  if: 'B', then: 2, else: 4
- 2. write symbol: '1', goto: 3 
+ 2. write symbol: '1', goto: 3
  3. right goto: 6
  4. write symbol: '1', goto: 5
  5. right goto: 16

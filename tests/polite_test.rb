@@ -1,3 +1,4 @@
+require 'test_helper'
 require 'dslkit/polite'
 
 class TL

@@ -1,5 +1,5 @@
+require 'test_helper'
 require 'dslkit/polite'
-require 'test/unit'
 
 class ScopeTest < Test::Unit::TestCase
   include DSLKit::Scope

@@ -3,3 +3,7 @@
 source :rubygems
 
 gemspec
+
+group :test do
+  gem 'simplecov', :platform => :mri_19
+end

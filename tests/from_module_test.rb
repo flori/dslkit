@@ -1,5 +1,5 @@
+require 'test_helper'
 require 'dslkit/polite'
-require 'test/unit'
 
 class FromModuleTest < Test::Unit::TestCase
   module MyIncludedModule
