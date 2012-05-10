@@ -169,13 +169,13 @@ module Turing
   end
 
   class BaseMachine
-    def initialize(program = nil)
+    def initialize(program = nil, &block)
       @states = []
       if program
         block_given? and raise "use either program source string or a block"
         interpret program
       else
-        instance_eval(&Proc.new)
+        instance_eval(&block)
       end
     end
 
