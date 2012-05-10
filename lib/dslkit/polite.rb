@@ -696,7 +696,7 @@ module DSLKit
         super
       elsif args.size == 1 and id.to_s =~ /(.*?)=\Z/
         c = scope_top(dynamic_scope_name) or super
-        c[$1.to_sym] = args.first
+        c[$1] = args.first
       else
         super
       end
