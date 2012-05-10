@@ -11,9 +11,13 @@ module DSLKit
   #
   # The module can be included into other modules/classes to make the methods available.
   module Eigenclass
-    # Returns the eigenclass of this object.
-    def eigenclass
-      class << self; self; end
+    if Object.respond_to?(:singleton_class)
+      alias eigenclass singleton_class
+    else
+      # Returns the eigenclass of this object.
+      def eigenclass
+        class << self; self; end
+      end
     end
 
     # Evaluates the _block_ in context of the eigenclass of this object.
@@ -375,8 +379,9 @@ module DSLKit
     # <i>*ids</i>. ids can be Symbols, Strings, and Regexps that have to match
     # the method name with #===.
     def self.with(*ids)
+      opts = Hash === ids.last ? ids.pop : {}
       ids = ids.map { |id| Regexp === id ? id : id.to_s }
-      klass = Class.new
+      klass = opts[:superclass] ? Class.new(opts[:superclass]) : Class.new
       klass.instance_eval do
         instance_methods.each do |m|
           m = m.to_s
