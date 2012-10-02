@@ -15,7 +15,8 @@ GemHadar do
   readme      'README.rdoc'
 
   dependency  'term-ansicolor', '~>1.0'
-  dependency  'tins',           '~>0.3'
+  dependency  'tins',           '~>0.5.6'
+  development_dependency 'utils'
 
   install_library do
     libdir = CONFIG["sitelibdir"]
