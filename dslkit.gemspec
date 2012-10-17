@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name = "dslkit"
-  s.version = "0.2.11"
+  s.version = "0.2.12"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Florian Frank"]
-  s.date = "2012-10-02"
+  s.date = "2012-10-17"
   s.description = "This library contains recurring patterns, that are useful in the creation of internal Domain Specific Languages (DSL) in Ruby."
   s.email = "flori@ping.de"
   s.extra_rdoc_files = ["README.rdoc", "lib/dslkit/polite.rb", "lib/dslkit/rude.rb", "lib/dslkit/version.rb", "lib/dslkit.rb"]
@@ -25,17 +25,17 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<gem_hadar>, ["~> 0.1.8"])
       s.add_development_dependency(%q<utils>, [">= 0"])
       s.add_runtime_dependency(%q<term-ansicolor>, ["~> 1.0"])
-      s.add_runtime_dependency(%q<tins>, ["~> 0.5.6"])
+      s.add_runtime_dependency(%q<tins>, ["~> 0.6"])
     else
       s.add_dependency(%q<gem_hadar>, ["~> 0.1.8"])
       s.add_dependency(%q<utils>, [">= 0"])
       s.add_dependency(%q<term-ansicolor>, ["~> 1.0"])
-      s.add_dependency(%q<tins>, ["~> 0.5.6"])
+      s.add_dependency(%q<tins>, ["~> 0.6"])
     end
   else
     s.add_dependency(%q<gem_hadar>, ["~> 0.1.8"])
     s.add_dependency(%q<utils>, [">= 0"])
     s.add_dependency(%q<term-ansicolor>, ["~> 1.0"])
-    s.add_dependency(%q<tins>, ["~> 0.5.6"])
+    s.add_dependency(%q<tins>, ["~> 0.6"])
   end
 end
