@@ -685,6 +685,12 @@ module DSLKit
 
     attr_accessor :dynamic_scope_name
 
+    def dynamic_defined?(id)
+      self.dynamic_scope_name ||= :variables
+      scope_reverse(dynamic_scope_name) { |c| c.key?(id) and return true }
+      false
+    end
+
     def dynamic_scope(&block)
       self.dynamic_scope_name ||= :variables
       scope_block(Context.new, dynamic_scope_name, &block)
